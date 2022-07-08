@@ -1,0 +1,77 @@
+/* Parte superior */ 
+
+.main-postarFeed {
+  background-color: white;
+  box-shadow: 1px 1px 5.5px #000;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-feedForm {
+  padding: 20px 20px 20px 10px;
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  text-align: center;
+  justify-content: left;
+  align-items: center;
+}
+
+.main-feedForm img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.main-feedForm input{
+  width: calc(50% - 40px);
+  height: 40px;
+  margin-left: 2%;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-bottom: 4px;
+  font-size: 15px;
+}
+
+.main-feedForm input:focus {
+  outline: none;
+}
+
+
+/* parte inferior */
+
+.main-feedFormIcons {
+  padding: 20px 40px;
+  display: flex;
+}
+
+.feedFormIconSingle {
+  width: 33.3%;
+}
+
+.feedFormIconSingle svg{
+  vertical-align: middle;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.feedFormIconSingle.-video svg {
+  color: rgb(167, 27, 27);
+}
+
+.feedFormIconSingle.-foto svg {
+  color: #0f0;
+}
+
+.feedFormIconSingle.-sentimento svg {
+  color: rgb(255, 166, 0);
+}
+
+.feedFormIconSingle span{
+  font-weight: bold;
+  font-size: 15px;
+  color: gray;
+  margin-left: 5px;
+  cursor: pointer;
+}

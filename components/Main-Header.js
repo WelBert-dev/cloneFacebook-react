@@ -5,18 +5,22 @@ import './Main-Header.css';
 export default function() 
 {
     return (
-        <header className="header">
+      <header className="header">
         <div className="header-left">
-          <i className="iconLogoFb"><FaFacebook/></i>
-          <div className="header-left--inputContainer">
-            <i className="iconSearch"><FaSearch/></i>
-            <input className="header-left--input"></input>
+          <div className="logoFb-principal"> 
+            <FaFacebook/>
+          </div>
+          <div className="searchFb-principal">
+            <FaSearch/>
+          </div>
+          <div className="menuFb-principal">
+            <FaAlignJustify/>
           </div>
         </div>
-        <div className="header-center">
-
-        </div>
         <div className="header-right">
+          <div className="plusBtn-principal">
+            +
+          </div>
 
         </div>
       </header>

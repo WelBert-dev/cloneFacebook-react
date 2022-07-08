@@ -2,31 +2,74 @@
 
 .header {
     display: flex;
-    position: fixed;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    border: 2px solid #000;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 1px  1px 5.5px #000;
 }
+
+/* header left */ 
 
 .header-left {
-    width: 33%;
-    border: 2px solid #000;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
-.header-center {
-    width: 33%;
-    border: 2px solid #000;
+.logoFb-principal svg{
+    color: #4287f5;
+    font-size: 40px;
+    margin: 0 10px;
+    cursor: pointer;
 }
 
-.header-right {
-    width: 33%;
-    border: 2px solid #000;
+.searchFb-principal {
+    background-color: rgb(230, 230, 230);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
 }
 
+.searchFb-principal svg {
+    color: gray;
+    font-size: 15px;
+}
 
-.iconLogoFb svg{
-    color: blue;
+.menuFb-principal {
+    cursor: pointer;
+    margin-left: 25px;
+    position: relative;
+    padding: 8px 10px;
+}
+
+.menuFb-principal svg {
+    color: gray;
     font-size: 25px;
 }
 
+.menuFb-principal:hover {
+    background-color: rgb(200, 200, 200);;
+}
+
+/* header right */
+
+.header-right {
+    width: 50%;
+    text-align: right;
+    margin: 0 20px;
+}
+
+.plusBtn-principal {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    line-height: 36px;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
