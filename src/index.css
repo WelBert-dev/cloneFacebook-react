@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  width: 100vw;
+  background-color: #ccc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
