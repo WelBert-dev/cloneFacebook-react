@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+    <!-- link cloud: https://console.firebase.google.com/u/1/project/clonefacebook-react/firestore -->
+    <!-- link banco: https://console.firebase.google.com/u/1/project/clonefacebook-react/firestore/data/~2Ftarefas -->
+</head>
+<body>
+	<section> 
+		<form id="formulario"> 
+			<input type="text" name="tarefa"/>
+			<input type="submit"/>
+		</form>
+		<div class="list">
+			
+		</div>
+	</section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script>
+        
+        // Import the functions you need from the SDKs you need
+        // initializeApp 
+        // getAnalytics 
+        // getFirestore, collection, getDocs 
+        // getAuth, createUserWithEmailAndPassword
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDKLEHVkRulheQBE_Qr3HHandoJA4ZMk5I",
+          authDomain: "clonefacebook-react.firebaseapp.com",
+          projectId: "clonefacebook-react",
+          storageBucket: "clonefacebook-react.appspot.com",
+          messagingSenderId: "1058779792350",
+          appId: "1:1058779792350:web:7a1cf2646323d25baa134f",
+          measurementId: "G-14S94J9TT8"
+        };
+      
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        // const analytics = firebase.analytics(app);
+        const auth = firebase.auth();
+        const provider = new firebase.auth.GoogleAuthProvider();
+        const db = firebase.firestore();
+        
+        const formulario = document.querySelector("#formulario");
+
+        formulario.addEventListener("submit", function(e){
+            e.preventDefault();
+            let tarefa = document.querySelector("[name=tarefa]").value;
+            db.collection("tarefas").add({
+                tarefa: tarefa
+            });
+            alert("Inserido com sucesso!");
+            form.reset();		
+        });
+
+        setTimeout(function(){
+            auth.signInWithPopup(provider);
+            console.log("cu");
+        }, 3000);
+
+        auth.onAuthStateChanged(function(val){
+            if(val)
+            {
+                alert("Logado com sucesso " + val.displayName);
+                console.log(val);
+            }
+        });
+        
+        db.collection("tarefas").onSnapshot(function(data){ // fica monitorando a tabela tarefas, quando ocorre mudança dispara a função
+        	let lista = document.querySelector(".list");
+        	lista.innerHTML = "";
+        	data.docs.map(function(val){
+        		lista.innerHTML += `${val.data().tarefa}</br>`;
+        		console.log(val)
+        	});
+        });
+
+    </script>
+</body>
+</html>
